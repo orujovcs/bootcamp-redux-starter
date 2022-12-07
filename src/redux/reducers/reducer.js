@@ -1,3 +1,4 @@
+let count = 0;
 const initialState = {
   cart: [],
   goods: [
@@ -26,23 +27,24 @@ function reducer(state=initialState, action)
 {       
   if(action.type === "ADD_GOOD_TO_CART"){              
     const good = structuredClone(state.goods.find(item => 
-      item.id === action.payload.id)); 
-    good.id = Number(Math.random().toFixed(5) * 100000);
+      item.id === action.payload.id
+    )); 
+    good.id = count;
+    count++;
     const cart = [...state.cart, good ]; 
-        
     return {
-    ...state,
-    cart,
+      ...state,
+      cart,
     }
   }
 
   if(action.type === "DELETE_GOOD_FROM_CART"){                      
     const cart = state.cart.filter(
-        (item)=> item.id !== action.payload.id
-      );
+      (item)=> item.id !== action.payload.id
+    );
     return{
-        ...state,
-        cart,
+      ...state,
+      cart,
     }
   }
   return state;
