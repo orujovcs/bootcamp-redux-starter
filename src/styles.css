@@ -139,11 +139,30 @@ body {
 
 .cart-item__title {
   margin: 0;
-  width: 60%;
+  width: 170px;
   font-size: 12px;
 }
 
 .cart-item__price {
   margin: 0;
+  margin-left: 20px;
   font-size: 14px;
+}
+
+.cart__list-item{
+  display: flex;
+  flex-direction: row;
+}
+
+.deleteGood{
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  margin-top: -2px;
+  margin-left: 10px;
+  border: none;
+  background: none;
+  background-color: #1a73e8;
+  border-radius: 50px;
+  width: 18px;
 }
